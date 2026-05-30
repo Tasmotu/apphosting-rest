@@ -1,0 +1,27 @@
+/**
+ * For more details on how to configure Wrangler, refer to:
+ * https://developers.cloudflare.com/workers/wrangler/configuration/
+ */
+{
+	"$schema": "node_modules/wrangler/config-schema.json",
+	"name": "apphosting-rest",
+	"main": "src/index.ts",
+	"compatibility_date": "2025-03-03",
+    "d1_databases": [
+        {
+          "binding": "DB",
+          "database_name": "apphosting",
+          "database_id": "9759748a-9ff8-4b1f-bb4b-149ad0237473"
+        }
+    ],
+    "secrets_store_secrets": [
+        {
+            "store_id": "0f5bb5fa9a19436b81b7da661a165b52",
+            "binding": "SECRET",
+            "secret_name": "apphosting-rest"
+        }
+    ],
+	"observability": {
+		"enabled": true
+	}
+}
